@@ -8,3 +8,16 @@ services:
     image: redis:alpine
     ports: 
       - 6379:6379
+  
+  catalog:
+    build:
+      context: ./catalog
+    ports:
+      - "5000:5000"
+    depends_on:
+      - catalog-db
+  
+  catalog-db:
+    image: postgres:9.6.16
+    environment:
+      - POSTGRES_DB=catalog_dev
