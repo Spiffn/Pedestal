@@ -1,13 +1,9 @@
-FROM debian:latest
-
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
-
-COPY . /catalog-app
-WORKDIR /catalog-app
-
-RUN pip install -r web/requirements.txt
-
-ENTRYPOINT [ "python" ]
-
-CMD ["web/app.py"]
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+RUN dotnet tool install -g dotnet-ef --version 3.1.0
+COPY . /app
+WORKDIR /app
+RUN ["dotnet", "restore"]
+RUN ["dotnet", "build"]
+EXPOSE 80/tcp
+RUN chmod +x ./entrypoint.sh
+CMD /bin/bash ./entrypoint.sh
