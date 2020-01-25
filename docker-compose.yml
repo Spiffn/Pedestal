@@ -1,10 +1,23 @@
 version: '3.4'
 
 services:
-  rabbitmq:
-    image: rabbitmq:management-alpine
+  # rabbitmq:
+  #   image: rabbitmq:management-alpine
 
-  redis:
-    image: redis:alpine
-    ports: 
-      - 6379:6379
+  # redis:
+  #   image: redis:alpine
+  #   ports: 
+  #     - 6379:6379
+
+  catalog:
+    build: ./catalog
+    ports:
+        - "5000:5000"
+        - "5001:5001"
+    depends_on:
+        - catalog-db
+  
+  catalog-db:
+    image: postgres:9.6.16
+    environment:
+      - POSTGRES_DB=catalog_dev
