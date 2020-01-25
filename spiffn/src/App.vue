@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-layout>
+      <router-view></router-view>
+    </app-layout>
   </div>
 </template>
 
@@ -30,39 +28,15 @@
   }
 }
 </style>
-s/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>open_in_new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
-</template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import AppLayout from '@/components/Layout/AppLayout.vue';
 
 export default {
   name: 'App',
-
   components: {
-    HelloWorld,
+    AppLayout,
   },
-
   data: () => ({
     //
   }),
