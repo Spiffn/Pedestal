@@ -10,7 +10,9 @@ services:
   #     - 6379:6379
 
   catalog:
-    build: ./catalog
+    build:
+      context: .
+      dockerfile: catalog/Dockerfile
     ports:
         - "5000:5000"
         - "5001:5001"

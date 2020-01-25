@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pedestal.Catalog.Infrastructure;
 using Pedestal.Catalog.Models;
-using Pedestal.Catalog.ViewModels;
+// using Pedestal.Catalog.ViewModels;
+//using Pedestal.Libraries.Database.ViewModels;
+using Pedestal.Libraries.Database.ViewModels;
 
 namespace Pedestal.Catalog.Controllers
 {
@@ -93,7 +95,7 @@ namespace Pedestal.Catalog.Controllers
             }
 
             var item = await _catalogContext.Modeldydoos.SingleOrDefaultAsync(ci => ci.Id == id);
-    
+
             if (item != null)
             {
                 return item;

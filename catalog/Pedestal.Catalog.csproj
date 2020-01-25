@@ -22,4 +22,9 @@
     <Folder Include="Infrastructure\EntityConfigurations\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="lib">
+      <HintPath>..\lib\bin\Debug\netstandard2.0\lib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
