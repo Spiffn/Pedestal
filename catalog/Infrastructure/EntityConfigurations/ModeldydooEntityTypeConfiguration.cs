@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Pedestal.Catalog.Models;
-using System;
 
 namespace Pedestal.Catalog.Infrastructure.EntityConfigurations
 {
