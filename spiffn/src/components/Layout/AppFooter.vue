@@ -3,8 +3,6 @@
     dark
     padless
   >
-    <!-- <v-row>
-      <v-col cols="12" class="pa-0"> -->
         <v-card
           flat
           tile
@@ -20,21 +18,15 @@
               <v-icon size="24px">{{ icon }}</v-icon>
             </v-btn>
           </v-card-text>
-
           <v-card-text class="pt-0">
             Spiffn is a peer-to-peer market of 3D model enthusiasts who seek to
             buy, sell, print, paint, and design 3D models.
           </v-card-text>
-
           <v-divider></v-divider>
-
           <v-card-text>
             {{ copyright }}
           </v-card-text>
         </v-card>
-
-      <!-- </v-col>
-    </v-row> -->
   </v-footer>
 </template>
 

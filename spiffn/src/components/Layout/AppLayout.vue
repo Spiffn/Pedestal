@@ -1,9 +1,8 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer app>
-    </v-navigation-drawer> -->
+    <app-navbar v-model="navbarOpen" />
     <v-content>
-      <app-toolbar/>
+      <app-toolbar @open="navbarOpen = !navbarOpen" />
       <v-container fluid>
         <slot></slot>
       </v-container>
@@ -15,12 +14,17 @@
 
 <script>
 import AppFooter from './AppFooter.vue';
+import AppNavbar from './AppNavbar.vue';
 import AppToolbar from './AppToolbar.vue';
 
 export default {
   components: {
     AppFooter,
+    AppNavbar,
     AppToolbar,
   },
+  data: () => ({
+    navbarOpen: null,
+  }),
 };
 </script>
